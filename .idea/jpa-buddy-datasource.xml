@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JpbDataSourceConfig">
+    <data-sources>
+      <data-source id="8ac2bb61-2c63-4121-859e-d38bb4903a3b" name="search_mutants" url="jdbc:mysql://localhost/db_mutants?useSSL=false&amp;allowMultiQueries=true&amp;serverTimezone=UTC" driverClass="com.mysql.cj.jdbc.Driver" />
+    </data-sources>
+    <data-source-infos>
+      <data-source-info id="8ac2bb61-2c63-4121-859e-d38bb4903a3b" persistence-unit-name="Default" />
+    </data-source-infos>
+  </component>
+</project>
