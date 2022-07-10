@@ -1,21 +1,22 @@
 package com.mutant.search_mutants.Business;
 
+import com.mutant.search_mutants.Common.Stat;
 import com.mutant.search_mutants.Entity.Mutant;
 import com.mutant.search_mutants.Repository.MutantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.Convert;
 import java.util.List;
 
 @Component
 public class DefineMutant implements IDefineMutant {
+    @Autowired
+    private MutantRepository repository;
     static int k1 = 0, k2 = 0;
     static boolean flag = true;
     static char verifD = ' ';
     static int countD = 1;
-
-    @Autowired
-    private MutantRepository repository;
 
     public boolean dnaStructureValidator(List<String> dna) {
 
@@ -36,11 +37,11 @@ public class DefineMutant implements IDefineMutant {
         mutant.setMutant(validation);
 
         repository.save(mutant);
-        return  validation;
+        return validation;
 
     }
 
-    public boolean verifHorizontal(String[] entrada) {
+    private boolean verifHorizontal(String[] entrada) {
         char verif = ' ';
         int conteo = 1;
         int parada = 0;
@@ -69,7 +70,7 @@ public class DefineMutant implements IDefineMutant {
         return false;
     }
 
-    public boolean verifVertical(String[] entrada) {
+    private boolean verifVertical(String[] entrada) {
         char verif = ' ';
         int conteo = 1;
         int parada = 0;
@@ -98,8 +99,7 @@ public class DefineMutant implements IDefineMutant {
         return false;
     }
 
-
-    public boolean validatorDiagonal(String[] m, int i, int j) {
+    private boolean validatorDiagonal(String[] m, int i, int j) {
         if (i >= 6 || j >= 6) {
             if (flag) {
                 int a = k1;
@@ -140,7 +140,7 @@ public class DefineMutant implements IDefineMutant {
         return false;
     }
 
-    public boolean validatorDiagonalInverse(String[] m) {
+    private boolean validatorDiagonalInverse(String[] m) {
         String[] n = {"", "", "", "", "", ""};
         boolean flag;
 
@@ -157,4 +157,19 @@ public class DefineMutant implements IDefineMutant {
         return flag;
     }
 
+    public Stat getStats() {
+        Stat stat = new Stat();
+        stat.setCountMutantDna(repository.selectTotalsMutants());
+        stat.setCountHumanDna(repository.selectTotalsHumans());
+
+        if (stat.getCountHumanDna() == 0 && stat.getCountMutantDna() == 0) {
+            stat.setRatio(0);
+        } else if (stat.getCountHumanDna() == 0 && stat.getCountMutantDna() > 0) {
+            stat.setRatio(1);
+        } else {
+            stat.setRatio( (float)stat.getCountMutantDna() / ((float) stat.getCountMutantDna() + (float) stat.getCountHumanDna()));
+        }
+
+        return stat;
+    }
 }

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/search_mutants/search_mutants.iml" filepath="$PROJECT_DIR$/search_mutants/search_mutants.iml" />
+      <module fileurl="file://$PROJECT_DIR$/search_mutants.iml" filepath="$PROJECT_DIR$/search_mutants.iml" />
     </modules>
   </component>
 </project>
