@@ -1,5 +1,10 @@
 package com.mutant.search_mutants.Common;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Stat {
 
     public Long getCountMutantDna() {
@@ -25,9 +30,11 @@ public class Stat {
     public void setRatio(float ratio) {
         Ratio = ratio;
     }
-
+    @JsonProperty("count_mutant_dna")
     private Long  CountMutantDna;
+    @JsonProperty("count_human_dna")
     private Long CountHumanDna;
+    @JsonProperty("ratio")
     private float Ratio;
 
 }

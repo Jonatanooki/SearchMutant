@@ -5,8 +5,6 @@ import com.mutant.search_mutants.Entity.Mutant;
 import com.mutant.search_mutants.Repository.MutantRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import javax.persistence.Convert;
 import java.util.List;
 
 @Component
@@ -167,7 +165,7 @@ public class DefineMutant implements IDefineMutant {
         } else if (stat.getCountHumanDna() == 0 && stat.getCountMutantDna() > 0) {
             stat.setRatio(1);
         } else {
-            stat.setRatio( (float)stat.getCountMutantDna() / ((float) stat.getCountMutantDna() + (float) stat.getCountHumanDna()));
+            stat.setRatio( (((float) stat.getCountMutantDna() * (float) stat.getCountHumanDna())/(float)stat.getCountHumanDna())/10 );
         }
 
         return stat;
