@@ -100,9 +100,35 @@ Una vez se clona o descarga el proyecto, se deben seguir los pasos a continuaci�
 <img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/6-paso5ng.png?raw=true">
 </p>
 
+6. Se debe de instalar [MySql](https://www.mysql.com/downloads/) seguir los pasos de instalación, crear un usuario y contraseña, seguidamente crear una base de datos llamada **"db_mutants"** con el siguiente query:
+
+7. en la ruta: ~\SearchMutant\src\main\resources\application.properties cambiar los datos de la conexión creada anteriormente de MySQL:
+
+```
+management.endpoint.shutdown.enabled=true
+management.endpoints.web.exposure.include=health,info,shutdown
+spring.datasource.url=jdbc:mysql://localhost:3306/db_mutants?serverTimezone=America/Bogota
+spring.datasource.username=root
+spring.datasource.password=123456
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=create-drop
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+logging.level.org.hibernate=debug
+
+```
+
+***Debido a que usamos "Spring Boot" la tabla donde se guardan las cadenas de ADN se borra (si existe) y crea automaticamente al ejecutar el servicio, como se puede observar en la configuración previa:"spring.jpa.hibernate.ddl-auto=create-drop".***
+
+
+```
+CREATE DATABASE `db_mutants` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+```
+
 Ya con los pasos previos realizados ya podemos ejecutar el codigo.
 
-6. Cuando la aplicación se encuentra en ejecución en [http://localhost:8080/](http://localhost:8080/) contiene los siguientes ***endpoints***:
+8. Cuando la aplicación se encuentra en ejecución en [http://localhost:8080/](http://localhost:8080/) contiene los siguientes ***endpoints***:
 
 - Validadción y guardado de los datos. *Es importante ejecutar este endpoint primero para ir guardando las cadenas de ADN para ejecutar posteriormente las estadisticas.*
   - Método HTTP: ***POST***
@@ -120,8 +146,8 @@ Ya con los pasos previos realizados ya podemos ejecutar el codigo.
   ```false```            
 
   [500 Internal Server Error](https://developer.mozilla.org/es/docs/Web/HTTP/Status/500): Ocurrió un error en el cargue o validacion de ADN. Se puede deber a conexión con la base de datos u otros procesos que no fueron controlados.
-  
-  - Consulta de las estadisticas.
+ 
+- Consulta de las estadisticas.
         
   - Método HTTP: ***GET***
   - Url: http://localhost:8080/api/stats
@@ -134,12 +160,16 @@ Ya con los pasos previos realizados ya podemos ejecutar el codigo.
   ```
   {
       “count_mutant_dna”:40,
-      “count_human_dna”:100:
+      “count_human_dna”:100,
       “ratio”:0.4
   }
   ```
 
+## Como se realizó 🚀
 
+### Hablando de código... 💻
+
+- **✍️ Lenguaje/tecnología...** todo esto fue desarrollado en **[JAVA 11](https://www.java.com/es/)** por medio del IDE **IntelliJ IDEA** usando [JAVA Spring Boot](https://spring.io/projects/spring-boot) y conectandonos la la base de datos por medio de [JPARepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html).
 
 
 
