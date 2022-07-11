@@ -178,7 +178,32 @@ Se analizó el algoritmo del recorrido de las celdas y para las verificaciones h
 <img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/ECXEL1.png?raw=true">
 </p>
 
-Ya que el analisis es muy complejo para solo recorrer las diagonales y las diagonales inversas que tengasn una longitud de 4 se decidió recorrer todas las diagonales de la matriz y para la matriz inversa se decidió darle la vuelta para usar el metodo normal de verificar diagonales.
+Ya que el analisis es muy complejo para solo recorrer las diagonales y las diagonales inversas que tengan una longitud de 4 se decidió recorrer todas las diagonales de la matriz, y para la matriz inversa se decidió darle la vuelta para usar el metodo normal de verificar diagonales.
+
+
+### En cuanto a la base de datos como se mencionó anteriormente el servicio crea automaticamente la tabla de la siguiente manera:
+
+- Tabla ***tbl_mutants***:
+
+    Los campos son:
+    
+    - **id_mutant (BIGINT)**: Identificación del mutante guardado.
+    - **dna(VARCHAR(8000))**: Corresponde a la cadena de ADN consultada.
+    - **is_mutant (BIT(1))**: Casilla donde se indica si la cadena de ADN correspondiente es mutante o muggle.
+
+<p align="center">
+    <img alt="Table tbl_mutants" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/DB2.png?raw=true">
+</p>
+
+- Los datos almacenados se verían de la siguiente manera: 
+
+<p align="center">
+    <img alt="Data" src="https://user-images.githubusercontent.com/86886404/178216946-eaeef916-7cef-4c94-9c05-c572fd53e35e.png">
+</p>
+
+**Consideración**: Esta tabla no contiene más información debido al planteamiento del problema.
+
+
 
 
 
