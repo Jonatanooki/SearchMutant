@@ -22,13 +22,13 @@ public class DefineMutant implements IDefineMutant {
         String[] input = dna.toArray(new String[dna.size()]);
         boolean validation = false;
 
-        validation = verifHorizontal(input);
+        validation = verifHorizontal(input, input.length, input[0].length());
         if (!validation)
-            validation = verifVertical(input);
+            validation = verifVertical(input, input.length, input[0].length());
         if (!validation)
-            validation = validatorDiagonal(input, 0, 0);
+            validation = validatorDiagonal(input, 0, 0, input.length, input[0].length());
         if (!validation)
-            validation = validatorDiagonalInverse(input);
+            validation = validatorDiagonalInverse(input, input.length, input[0].length());
 
 
         Mutant mutant = new Mutant();
@@ -40,12 +40,12 @@ public class DefineMutant implements IDefineMutant {
 
     }
 
-    private boolean verifHorizontal(String[] entrada) {
+    private boolean verifHorizontal(String[] entrada, int sizex, int sizey) {
         char verif = ' ';
         int conteo = 1;
         int parada = 0;
-        for (int x = 0; x < 6; x++) {
-            for (int y = 0; y < 6; y++) {
+        for (int x = 0; x < sizex; x++) {
+            for (int y = 0; y < sizey; y++) {
                 char c;
                 c = entrada[x].charAt(y);
 
@@ -69,12 +69,12 @@ public class DefineMutant implements IDefineMutant {
         return false;
     }
 
-    private boolean verifVertical(String[] entrada) {
+    private boolean verifVertical(String[] entrada, int sizex, int sizey) {
         char verif = ' ';
         int conteo = 1;
         int parada = 0;
-        for (int x = 0; x < 6; x++) {
-            for (int y = 0; y < 6; y++) {
+        for (int x = 0; x < sizex; x++) {
+            for (int y = 0; y < sizey; y++) {
                 char c;
                 c = entrada[y].charAt(x);
 
@@ -98,8 +98,8 @@ public class DefineMutant implements IDefineMutant {
         return false;
     }
 
-    private boolean validatorDiagonal(String[] m, int i, int j) {
-        if (i >= 6 || j >= 6) {
+    private boolean validatorDiagonal(String[] m, int i, int j, int sizex, int sizey) {
+        if (i >= sizex || j >= sizey) {
             if (flag) {
                 int a = k1;
                 k1 = k2;
@@ -129,30 +129,30 @@ public class DefineMutant implements IDefineMutant {
             return true;
         }
 
-        if (validatorDiagonal(m, i + 1, j + 1)) {
+        if (validatorDiagonal(m, i + 1, j + 1, sizex, sizey)) {
             return true;
         }
 
-        if (validatorDiagonal(m, k1, k2)) {
+        if (validatorDiagonal(m, k1, k2, sizex, sizey)) {
             return true;
         }
         return false;
     }
 
-    private boolean validatorDiagonalInverse(String[] m) {
-        String[] n = {"", "", "", "", "", ""};
+    private boolean validatorDiagonalInverse(String[] m, int sizex, int sizey) {
+        String[] n = new String[sizex];
         boolean flag;
 
-        for (int j = 0; j < 6; j++) {
+        for (int j = 0; j < sizey; j++) {
             char aux = ' ';
-            for (int i = 5; i >= 0; i--) {
+            for (int i = sizex - 1; i >= 0; i--) {
                 aux = m[j].charAt(i);
                 //System.out.print(aux);
                 n[j] += aux;
             }
             //System.out.println();
         }
-        flag = validatorDiagonal(n, 0, 0);
+        flag = validatorDiagonal(n, 0, 0, sizex, sizey);
         return flag;
     }
 
