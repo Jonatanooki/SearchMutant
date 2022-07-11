@@ -7,7 +7,8 @@ public class MutantBody {
     public MutantBody() {
 
     }
-    private  List<String> dna;
+
+    private List<String> dna;
 
     public List<String> getDna() {
         return dna;

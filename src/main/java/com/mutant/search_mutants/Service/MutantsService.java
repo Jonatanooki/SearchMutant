@@ -13,7 +13,8 @@ import java.util.List;
 public class MutantsService implements IMutantService {
     @Autowired
     private IDefineMutant defineMutant;
-    public void readchain(List<String> dna ){
+
+    public void readchain(List<String> dna) {
         System.out.println(dna);
     }
 

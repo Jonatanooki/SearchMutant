@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface IDefineMutant {
     public boolean dnaStructureValidator(List<String> dna);
+
     public Stat getStats();
 }

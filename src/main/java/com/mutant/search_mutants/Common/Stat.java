@@ -30,8 +30,9 @@ public class Stat {
     public void setRatio(float ratio) {
         Ratio = ratio;
     }
+
     @JsonProperty("count_mutant_dna")
-    private Long  CountMutantDna;
+    private Long CountMutantDna;
     @JsonProperty("count_human_dna")
     private Long CountHumanDna;
     @JsonProperty("ratio")
