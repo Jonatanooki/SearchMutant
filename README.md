@@ -7,7 +7,7 @@ En donde recibirás como parámetro un array de Strings que representan cada fil
 de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: (A,T,C,G), las
 cuales representa cada base nitrogenada del ADN.
 
-![enter image description here](https://fotos.subefotos.com/861243f53091dc5758f70d9e73b3ec44o.jpg)
+![enter image description here](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/1-planteamiento.png?raw=true)
 
 
 Sabrás si un humano es mutante, **si encuentras más de una secuencia de cuatro letras
@@ -70,23 +70,23 @@ Una vez se clona o descarga el proyecto, se deben seguir los pasos a continuaci�
 
 1. Ir a la parte superior derecha en ***Select run/Debug Configutation*** y realizar clic.
 
-IMAGEN paso1
+![IMAGEN paso1](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/2-paso1ng.png?raw=true)
 
 2. Luego en ***Edit Configurations***
 
-IMAGEN paso2
+![IMAGEN paso2](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/3-paso2ng.png?raw=true)
 
 3. Realizamos clic en el botón **"+"** y luego en **"Application"**.
 
-Imagen paso 3
+![Imagen paso 3](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/4-paso3ng.png?raw=true)
 
 4. En la ventana de configuración colocamos el nombre de **Debug** y realizamos clic en el recuadro de **"Main Class"** al lado derecho.
 
-Imagen paso 4
+![image](https://user-images.githubusercontent.com/86886404/178178555-69cd86ba-b489-4c14-b3c2-b7c96e864632.png)
 
 5. IntelliJ nos ayuda a buscar la clase principal, la seleccionamos y damos clic en **"OK"** y guardamos los cambios, esto para habilitar la depuración.
 
-Imagen paso 5
+![Imagen paso 5](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/6-paso5ng.png?raw=true)
 
 
  
