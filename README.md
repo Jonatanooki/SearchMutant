@@ -7,8 +7,10 @@ En donde recibirás como parámetro un array de Strings que representan cada fil
 de (NxN) con la secuencia del ADN. Las letras de los Strings solo pueden ser: (A,T,C,G), las
 cuales representa cada base nitrogenada del ADN.
 
-![enter image description here](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/1-planteamiento.png?raw=true)
+<p align="center">
+  <img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/1-planteamiento.png?raw=true">
 
+</p>
 
 Sabrás si un humano es mutante, **si encuentras más de una secuencia de cuatro letras
 iguales**, de forma oblicua, horizontal o vertical.
@@ -69,25 +71,25 @@ El proyecto consta de 4 carpetas y 5 archivos los cuales conforman todo el servi
 Una vez se clona o descarga el proyecto, se deben seguir los pasos a continuación con el IDE **IntelliJ IDEA**.
 
 1. Ir a la parte superior derecha en ***Select run/Debug Configutation*** y realizar clic.
-
-![IMAGEN paso1](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/2-paso1ng.png?raw=true)
-
+<p align="center">
+<img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/2-paso1ng.png?raw=true">
+</p>
 2. Luego en ***Edit Configurations***
-
-![IMAGEN paso2](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/3-paso2ng.png?raw=true)
-
+<p align="center">
+<img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/3-paso2ng.png?raw=true">
+</p>
 3. Realizamos clic en el botón **"+"** y luego en **"Application"**.
-
-![Imagen paso 3](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/4-paso3ng.png?raw=true)
-
+<p align="center">
+<img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/4-paso3ng.png?raw=true">
+</p>
 4. En la ventana de configuración colocamos el nombre de **Debug** y realizamos clic en el recuadro de **"Main Class"** al lado derecho.
-
-![image](https://user-images.githubusercontent.com/86886404/178178555-69cd86ba-b489-4c14-b3c2-b7c96e864632.png)
-
+<p align="center">
+<img alt="Cadena ADN" src="https://user-images.githubusercontent.com/86886404/178178555-69cd86ba-b489-4c14-b3c2-b7c96e864632.png">
+</p>
 5. IntelliJ nos ayuda a buscar la clase principal, la seleccionamos y damos clic en **"OK"** y guardamos los cambios, esto para habilitar la depuración.
-
-![Imagen paso 5](https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/6-paso5ng.png?raw=true)
-
+<p align="center">
+<img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/6-paso5ng.png?raw=true">
+</p>
 
  
 
