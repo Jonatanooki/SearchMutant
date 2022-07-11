@@ -172,6 +172,17 @@ logging.level.org.hibernate=debug
 - **✍️ Lenguaje/tecnología...** todo esto fue desarrollado en **[JAVA 11](https://www.java.com/es/)** por medio del IDE **IntelliJ IDEA** usando [JAVA Spring Boot](https://spring.io/projects/spring-boot) y conectandonos la la base de datos por medio de [JPARepository](https://docs.spring.io/spring-data/jpa/docs/current/api/org/springframework/data/jpa/repository/JpaRepository.html).
 
 
+Se analizó el algoritmo del recorrido de las celdas y para las verificaciones horizontales y verticales son recorridos sencillos por lo tanto no hay compledidad en el caso pero para las diagonales y diagonales inversas se realizó el siguiente analisis:
+
+<p align="center">
+<img alt="Cadena ADN" src="https://github.com/Jonatanooki/SearchMutant/blob/main/pictures/ECXEL1.png?raw=true">
+</p>
+
+Ya que el analisis es muy complejo para solo recorrer las diagonales y las diagonales inversas que tengasn una longitud de 4 se decidió recorrer todas las diagonales de la matriz y para la matriz inversa se decidió darle la vuelta para usar el metodo normal de verificar diagonales.
+
+
+
+
 
 
 
