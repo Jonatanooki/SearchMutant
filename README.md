@@ -102,6 +102,10 @@ Una vez se clona o descarga el proyecto, se deben seguir los pasos a continuaci�
 
 6. Se debe de instalar [MySql](https://www.mysql.com/downloads/) seguir los pasos de instalación, crear un usuario y contraseña, seguidamente crear una base de datos llamada **"db_mutants"** con el siguiente query:
 
+```
+CREATE DATABASE `db_mutants` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+```
+
 7. en la ruta: ~\SearchMutant\src\main\resources\application.properties cambiar los datos de la conexión creada anteriormente de MySQL:
 
 ```
@@ -122,11 +126,7 @@ logging.level.org.hibernate=debug
 ***Debido a que usamos "Spring Boot" la tabla donde se guardan las cadenas de ADN se borra (si existe) y crea automaticamente al ejecutar el servicio, como se puede observar en la configuración previa:"spring.jpa.hibernate.ddl-auto=create-drop".***
 
 
-```
-CREATE DATABASE `db_mutants` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-```
-
-Ya con los pasos previos realizados ya podemos ejecutar el codigo.
+***Ya con los pasos previos realizados ya podemos ejecutar el codigo.***
 
 8. Cuando la aplicación se encuentra en ejecución en [http://localhost:8080/](http://localhost:8080/) contiene los siguientes ***endpoints***:
 
