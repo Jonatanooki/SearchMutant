@@ -12,25 +12,27 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 public class MutantController {
-
     @Autowired
     IMutantService mutantService;
 
     @GetMapping("stats")
     public ResponseEntity<?> data() {
-
         Stat stat = mutantService.getStats();
-
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(stat);
     }
 
     @PostMapping("mutant")
     public ResponseEntity<?> create(@RequestBody @NotNull MutantBody mutantBody) {
         Boolean response = mutantService.ValidateMutant(mutantBody.getDna());
-        if (response)
-            return ResponseEntity.status(HttpStatus.CREATED).body(response);
-        else
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
+        HttpStatus status;
+
+        if (response) {
+            status = HttpStatus.CREATED;
+        } else {
+            status = HttpStatus.FORBIDDEN;
+        }
+
+        return ResponseEntity.status(status).body(response);
     }
 
 }

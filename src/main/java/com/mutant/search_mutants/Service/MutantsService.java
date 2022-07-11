@@ -14,10 +14,6 @@ public class MutantsService implements IMutantService {
     @Autowired
     private IDefineMutant defineMutant;
 
-    public void readchain(List<String> dna) {
-        System.out.println(dna);
-    }
-
     public Boolean ValidateMutant(List<String> dna) {
         return defineMutant.dnaStructureValidator(dna);
     }
@@ -25,6 +21,5 @@ public class MutantsService implements IMutantService {
     public Stat getStats() {
         return defineMutant.getStats();
     }
-
 
 }

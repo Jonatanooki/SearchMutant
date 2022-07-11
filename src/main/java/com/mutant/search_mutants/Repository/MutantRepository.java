@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface MutantRepository extends JpaRepository<Mutant, Long> {
-
     @Query(value = "SELECT COUNT(*) AS HumanDna FROM db_mutants.tbl_mutants WHERE is_mutant =0;",nativeQuery = true)
     Long selectTotalsHumans();
 

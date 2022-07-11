@@ -12,13 +12,11 @@ import javax.persistence.Table;
 
 @Table(name = "tbl_mutants")
 public class Mutant {
-    private static final long serialVersionUID = -4214521834599952692L;
-
     public Mutant() {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idMutant;
 
     @Column(length = 8000)
@@ -27,6 +25,11 @@ public class Mutant {
     @Column
     private Boolean IsMutant;
 
+    public Mutant(String DNA, Boolean isMutant) {
+        this.DNA = DNA;
+        IsMutant = isMutant;
+    }
+
     public Boolean getMutant() {
         return IsMutant;
     }
@@ -34,22 +37,5 @@ public class Mutant {
     public void setMutant(Boolean mutant) {
         IsMutant = mutant;
     }
-
-    public Long getIdMutant() {
-        return idMutant;
-    }
-
-    public void setIdMutant(long idMutant) {
-        this.idMutant = idMutant;
-    }
-
-    public String getDNA() {
-        return DNA;
-    }
-
-    public void setADN(String dna) {
-        DNA = dna;
-    }
-
 
 }

@@ -6,36 +6,23 @@ import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Stat {
-
-    public Long getCountMutantDna() {
-        return CountMutantDna;
-    }
-
-    public void setCountMutantDna(Long countMutantDna) {
-        CountMutantDna = countMutantDna;
-    }
-
-    public Long getCountHumanDna() {
-        return CountHumanDna;
-    }
-
-    public void setCountHumanDna(Long countHumanDna) {
-        CountHumanDna = countHumanDna;
-    }
-
-    public float getRatio() {
-        return Ratio;
-    }
-
-    public void setRatio(float ratio) {
-        Ratio = ratio;
-    }
-
     @JsonProperty("count_mutant_dna")
-    private Long CountMutantDna;
+    private Long countMutantDna;
     @JsonProperty("count_human_dna")
-    private Long CountHumanDna;
+    private Long countHumanDna;
     @JsonProperty("ratio")
-    private float Ratio;
+    private float ratio;
 
+    public Stat(Long countMutantDna, Long countHumanDna) {
+        this.countMutantDna = countMutantDna;
+        this.countHumanDna = countHumanDna;
+
+        if (countHumanDna == 0 && countMutantDna == 0) {
+            this.ratio =0;
+        } else if (countHumanDna == 0 && countMutantDna > 0) {
+            this.ratio =1;
+        } else {
+            this.ratio = ((((float) countMutantDna * (float) countHumanDna) / (float) countHumanDna) / 10);
+        }
+    }
 }
