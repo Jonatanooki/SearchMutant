@@ -62,7 +62,36 @@ millón de peticiones por segundo).
 **Test-Automáticos, Code coverage > 80%.**
 
 
-## ¿Cómo pruebo la solución de este repositorio?
+## Probando la solución de este repositorio
+
+El proyecto consta de 4 carpetas y 5 archivos los cuales conforman todo el servicio.
+
+Una vez se clona o descarga el proyecto, se deben seguir los pasos a continuación con el IDE **IntelliJ IDEA**.
+
+1. Ir a la parte superior derecha en ***Select run/Debug Configutation*** y realizar clic.
+
+IMAGEN paso1
+
+2. Luego en ***Edit Configurations***
+
+IMAGEN paso2
+
+3. Realizamos clic en el botón **"+"** y luego en **"Application"**.
+
+Imagen paso 3
+
+4. En la ventana de configuración colocamos el nombre de **Debug** y realizamos clic en el recuadro de **"Main Class"** al lado derecho.
+
+Imagen paso 4
+
+5. IntelliJ nos ayuda a buscar la clase principal, la seleccionamos y damos clic en **"OK"** y guardamos los cambios, esto para habilitar la depuración.
+
+Imagen paso 5
+
+
+ 
+
+
 
 
 
